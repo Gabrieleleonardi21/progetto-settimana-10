@@ -57,3 +57,13 @@
   margin: 0;
   font-weight: bold;
 }
+
+/* Mappa della città, sotto la card dei dati */
+.details__mappa {
+  display: block;
+  width: 100%;
+  height: 400px;
+  margin-top: 24px;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 12px;
+}

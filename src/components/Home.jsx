@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import { getMeteoPerCitta } from "../api/meteo";
 import { useAuth } from "../context/auth";
 import { useCitta } from "../context/citta";
+import { urlMappaWindy } from "../utils/mappaWindy";
 import MeteoCard from "./MeteoCard";
 import "./Home.css";
 
-// Mappa meteo interattiva dell'Italia (Windy, embed pubblico senza chiave API).
-// overlay=waves apre la mappa sulle onde; l'utente può poi cambiare livello dal menu.
-const MAPPA_URL =
-  "https://embed.windy.com/embed2.html?lat=42.5&lon=12.5&zoom=5&overlay=waves&menu=&message=&marker=&type=map";
+// Vista d'insieme centrata sull'Italia. overlay=waves apre la mappa sulle onde;
+// l'utente può poi cambiare livello dal menu di Windy.
+const MAPPA_URL = urlMappaWindy({
+  lat: 42.5,
+  lon: 12.5,
+  zoom: 5,
+  overlay: "waves",
+});
 
 function Home() {
   const { utente } = useAuth();
