@@ -93,6 +93,8 @@ function Home() {
           const azione = utente && {
             icona: "bi-x-lg",
             etichetta: `Rimuovi ${item.luogo.name}`,
+            // rossa in hover: rimuove la card senza conferma né undo
+            variante: "pericolo",
             onClick: () => rimuovi(item.richiesta),
           };
 

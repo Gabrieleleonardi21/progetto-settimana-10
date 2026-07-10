@@ -1,14 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
 import { condizioneMeteo } from "../utils/condizioneMeteo";
+import Toast from "./Toast";
 import "./MeteoCard.css";
 
 // Card riassuntiva di una città. È un Link: cliccandola si apre la route /details.
 // Componente di sola presentazione: riceve i dati via props, non fa fetch.
 //
-// azione (opzionale): { icona, etichetta, onClick } disegna un bottone in alto a destra.
-// Home lo usa per rimuovere, Search per aggiungere. Sta FUORI dal Link: un <button>
-// dentro un <a> è HTML non valido e il click farebbe comunque navigare.
-function MeteoCard({ luogo, meteo, azione }) {
+// azione (opzionale): { icona, etichetta, onClick, variante } disegna un bottone in alto
+// a destra. Home lo usa per rimuovere, Search per aggiungere. Sta FUORI dal Link: un
+// <button> dentro un <a> è HTML non valido e il click farebbe comunque navigare.
+//
+// toast (opzionale): { id, testo } mostra la notifica sopra QUESTA card.
+// La key sull'id fa ripartire il timer anche se il testo non cambia.
+function MeteoCard({ luogo, meteo, azione, toast, onToastChiudi }) {
   const { pathname, search } = useLocation();
 
   // Registriamo la pagina di partenza (con la query, per non perdere i risultati):
@@ -16,6 +20,15 @@ function MeteoCard({ luogo, meteo, azione }) {
   const provenienza = pathname + search;
 
   const condizione = condizioneMeteo(meteo.weathercode);
+
+  // variante "pericolo" -> classe card__azione--pericolo.
+  // filter(Boolean) scarta la modificatrice quando l'azione manca o non ha variante.
+  const classiAzione = [
+    "card__azione",
+    azione?.variante && `card__azione--${azione.variante}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className="card-box">
@@ -47,13 +60,17 @@ function MeteoCard({ luogo, meteo, azione }) {
       {azione && (
         <button
           type="button"
-          className="card__azione"
+          className={classiAzione}
           onClick={azione.onClick}
           aria-label={azione.etichetta}
           title={azione.etichetta}
         >
           <i className={`bi ${azione.icona}`} aria-hidden="true"></i>
         </button>
+      )}
+
+      {toast && (
+        <Toast key={toast.id} messaggio={toast.testo} onChiudi={onToastChiudi} />
       )}
     </div>
   );

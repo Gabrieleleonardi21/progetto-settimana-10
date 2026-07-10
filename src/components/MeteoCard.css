@@ -13,7 +13,9 @@
   text-decoration: none;
 }
 
-/* Sovrapposto alla card, in alto a destra. Il padding-right della card gli fa spazio */
+/* Sovrapposto alla card, in alto a destra. Il padding-right della card gli fa spazio.
+   Pieno d'accento già a riposo: su fondo card (quasi bianco) un bottone bianco
+   si notava solo al passaggio del mouse. */
 .card__azione {
   position: absolute;
   top: 10px;
@@ -21,17 +23,25 @@
   width: 36px;
   height: 36px;
   padding: 0;
-  border: 1px solid var(--colore-bordo);
+  border: 1px solid var(--colore-accento);
   border-radius: 8px;
-  background: var(--colore-nav);
-  color: var(--colore-accento);
-  font-size: 1rem;
+  background: var(--colore-accento);
+  color: #fff;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 
 .card__azione:hover {
-  background: var(--colore-accento);
-  color: #fff;
+  background: var(--colore-accento-hover);
+  border-color: var(--colore-accento-hover);
+}
+
+/* Variante per le azioni distruttive (la X che rimuove dalla home): a riposo resta
+   verde come le altre, diventa rossa sotto il mouse per avvisare prima del click.
+   Va dopo :hover del blocco base, che ha la stessa specificità. */
+.card__azione--pericolo:hover {
+  border-color: var(--colore-errore);
+  background: var(--colore-errore);
 }
 
 .card__azione .bi {
