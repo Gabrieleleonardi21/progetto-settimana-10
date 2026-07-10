@@ -7,19 +7,25 @@
   flex: 1;
   min-width: 0;
   padding: 8px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--colore-bordo);
   border-radius: 8px;
   font-size: 1rem;
+  background: var(--colore-card);
+  color: inherit;
 }
 
 .searchbar__button {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  background: #2563eb;
+  background: var(--colore-accento);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.searchbar__button:hover {
+  background: var(--colore-accento-hover);
 }
 
 .searchbar__button:disabled {

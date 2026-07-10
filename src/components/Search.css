@@ -9,7 +9,7 @@
 }
 
 .search__error {
-  color: #dc2626;
+  color: var(--colore-errore);
 }
 
 .search__cards {

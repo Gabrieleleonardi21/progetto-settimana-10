@@ -9,7 +9,7 @@
   margin: 0;
   font-size: 4rem;
   font-weight: bold;
-  color: #2563eb;
+  color: var(--colore-accento);
 }
 
 .notfound__titolo {
@@ -19,6 +19,6 @@
 .notfound__link {
   display: inline-block;
   margin-top: 16px;
-  color: #2563eb;
+  color: var(--colore-accento);
   text-decoration: none;
 }

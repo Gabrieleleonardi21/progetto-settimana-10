@@ -1,0 +1,24 @@
+/* Stili globali dell'app */
+
+/* Palette costruita attorno al verde acqua dello sfondo.
+   Cambia un valore qui e si aggiorna tutta l'app. */
+:root {
+  --colore-sfondo: #87dcb4; /* verde acqua della pagina */
+  --colore-nav: #ffffff; /* barra in alto, si stacca dallo sfondo */
+  --colore-card: #f4fbf8; /* card, dettaglio e campo di ricerca */
+  --colore-bordo: #cbe8dc; /* bordi tenui, in tinta col verde */
+
+  --colore-testo: #10352a; /* verde molto scuro invece del grigio neutro */
+  --colore-testo-soft: #4b6f61; /* etichette e testi secondari */
+
+  --colore-accento: #0f766e; /* bottoni, link e stato attivo */
+  --colore-accento-hover: #115e59;
+  --colore-errore: #b91c1c;
+}
+
+body {
+  margin: 0;
+  background: var(--colore-sfondo);
+  font-family: system-ui, sans-serif;
+  color: var(--colore-testo);
+}

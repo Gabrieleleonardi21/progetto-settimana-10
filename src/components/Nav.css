@@ -4,29 +4,31 @@
   gap: 24px;
   flex-wrap: wrap;
   padding: 12px 24px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--colore-bordo);
+  background: var(--colore-nav);
 }
 
 .nav__brand {
-  font-size: 1.25rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: #2563eb;
+  color: var(--colore-accento);
   text-decoration: none;
 }
 
 .nav__links {
+  font-size: 1.5rem;
   display: flex;
   gap: 16px;
 }
 
 .nav__link {
-  color: #374151;
+  color: var(--colore-testo);
   text-decoration: none;
 }
 
 /* Classe applicata automaticamente da NavLink alla route attiva */
 .nav__link.active {
-  color: #2563eb;
+  color: var(--colore-accento);
   font-weight: bold;
 }
 
@@ -36,4 +38,10 @@
   min-width: 200px;
   max-width: 360px;
   margin-left: auto;
+  transition: max-width 0.25s ease;
+}
+
+/* Sulla route /search il tetto dei 360px sale: la barra riempie lo spazio libero */
+.nav__search--wide {
+  max-width: 800px;
 }

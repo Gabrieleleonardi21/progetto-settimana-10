@@ -7,24 +7,25 @@
 .details__indietro {
   display: inline-block;
   margin-bottom: 16px;
-  color: #2563eb;
+  color: var(--colore-accento);
   text-decoration: none;
 }
 
 .details__error {
-  color: #dc2626;
+  color: var(--colore-errore);
 }
 
 .details__card {
   padding: 24px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--colore-bordo);
   border-radius: 12px;
+  background-color: var(--colore-card);
 }
 
 .details__titolo {
   margin: 0;
   font-size: 1.5rem;
-  color: #6b7280;
+  color: var(--colore-testo-soft);
   font-weight: normal;
 }
 
@@ -43,7 +44,7 @@
 }
 
 .details__lista dt {
-  color: #6b7280;
+  color: var(--colore-testo-soft);
 }
 
 .details__lista dd {
