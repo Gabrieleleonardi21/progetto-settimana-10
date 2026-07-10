@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav__brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.nav__links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav__link {
+  color: #374151;
+  text-decoration: none;
+}
+
+/* Classe applicata automaticamente da NavLink alla route attiva */
+.nav__link.active {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* La searchbar occupa lo spazio rimasto, spinta a destra */
+.nav__search {
+  flex: 1;
+  min-width: 200px;
+  max-width: 360px;
+  margin-left: auto;
+}

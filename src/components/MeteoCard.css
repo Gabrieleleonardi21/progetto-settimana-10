@@ -1,0 +1,31 @@
+.card {
+  display: block;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  border-color: #2563eb;
+}
+
+.card__titolo {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: normal;
+}
+
+.card__temp {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.card__vento {
+  margin: 8px 0 0;
+  color: #6b7280;
+}

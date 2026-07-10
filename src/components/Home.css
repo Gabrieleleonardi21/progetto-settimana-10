@@ -1,0 +1,29 @@
+.home {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.home__titolo {
+  margin-top: 0;
+}
+
+.home__error {
+  color: #dc2626;
+}
+
+/* Le due card affiancate, in colonna su schermi stretti */
+.home__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.home__mappa {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}

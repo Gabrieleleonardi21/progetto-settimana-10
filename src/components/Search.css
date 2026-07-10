@@ -1,0 +1,19 @@
+.search {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.search__titolo {
+  margin-top: 0;
+}
+
+.search__error {
+  color: #dc2626;
+}
+
+.search__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}

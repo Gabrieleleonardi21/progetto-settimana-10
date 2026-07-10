@@ -1,0 +1,52 @@
+.details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.details__indietro {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.details__error {
+  color: #dc2626;
+}
+
+.details__card {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.details__titolo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #6b7280;
+  font-weight: normal;
+}
+
+.details__temp {
+  margin: 8px 0 24px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+/* Griglia etichetta/valore per i dati secondari */
+.details__lista {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 24px;
+  margin: 0;
+}
+
+.details__lista dt {
+  color: #6b7280;
+}
+
+.details__lista dd {
+  margin: 0;
+  font-weight: bold;
+}
