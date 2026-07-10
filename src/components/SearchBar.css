@@ -24,6 +24,11 @@
   cursor: pointer;
 }
 
+/* Dentro il bottone lo sfondo è già l'accento: l'icona segue il testo, bianca */
+.searchbar__button .bi {
+  color: inherit;
+}
+
 .searchbar__button:hover {
   background: var(--colore-accento-hover);
 }

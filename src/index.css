@@ -11,9 +11,16 @@
   --colore-testo: #10352a; /* verde molto scuro invece del grigio neutro */
   --colore-testo-soft: #4b6f61; /* etichette e testi secondari */
 
-  --colore-accento: #0f766e; /* bottoni, link e stato attivo */
+  --colore-accento: #0f766e; /* bottoni, link e stato attivo su fondo chiaro */
   --colore-accento-hover: #115e59;
+  /* Sul verde acqua l'accento normale è troppo chiaro per il testo (3.4:1):
+     i link appoggiati direttamente sullo sfondo usano questo. */
+  --colore-accento-scuro: #0d4f4a;
   --colore-errore: #b91c1c;
+
+  /* Le icone riprendono l'accento. Variabile a parte: se un giorno le vuoi
+     di un colore diverso dai bottoni, cambi solo questa riga. */
+  --colore-icona: var(--colore-accento);
 }
 
 body {
@@ -27,4 +34,5 @@ body {
    In em, così resta proporzionato sia nei titoli grandi sia nei testi piccoli. */
 .bi {
   margin-right: 0.4em;
+  color: var(--colore-icona);
 }

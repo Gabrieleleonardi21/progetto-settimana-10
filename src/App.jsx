@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Details from "./components/Details";
+import Profilo from "./components/Profilo";
 import NotFound from "./components/NotFound";
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         {/* :nome è un parametro dinamico, letto in Details con useParams */}
         <Route path="/details/:nome" element={<Details />} />
+        <Route path="/profilo" element={<Profilo />} />
         {/* "*" intercetta tutto ciò che non ha combaciato: va tenuta per ultima */}
         <Route path="*" element={<NotFound />} />
       </Routes>

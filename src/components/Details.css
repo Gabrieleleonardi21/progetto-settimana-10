@@ -4,11 +4,17 @@
   padding: 24px;
 }
 
+/* Appoggiato sullo sfondo verde, non su una card: serve l'accento scuro */
 .details__indietro {
   display: inline-block;
   margin-bottom: 16px;
-  color: var(--colore-accento);
+  color: var(--colore-accento-scuro);
   text-decoration: none;
+}
+
+/* La freccia segue il colore del testo, altrimenti resterebbe più chiara */
+.details__indietro .bi {
+  color: inherit;
 }
 
 .details__error {

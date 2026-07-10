@@ -1,0 +1,29 @@
+.profilo {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.profilo__card {
+  padding: 32px;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 12px;
+  background: var(--colore-card);
+  text-align: center;
+}
+
+/* L'icona qui è grande e da sola: niente margine a destra */
+.profilo__avatar {
+  font-size: 5rem;
+  margin-right: 0;
+}
+
+.profilo__nome {
+  margin: 16px 0 4px;
+  font-size: 2rem;
+}
+
+.profilo__ruolo {
+  margin: 0;
+  color: var(--colore-testo-soft);
+}

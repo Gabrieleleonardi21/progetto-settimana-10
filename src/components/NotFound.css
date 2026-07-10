@@ -16,9 +16,10 @@
   margin: 8px 0 16px;
 }
 
+/* Anche questo sta sullo sfondo verde */
 .notfound__link {
   display: inline-block;
   margin-top: 16px;
-  color: var(--colore-accento);
+  color: var(--colore-accento-scuro);
   text-decoration: none;
 }

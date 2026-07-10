@@ -12,13 +12,22 @@ function Nav() {
       </NavLink>
 
       <div className="nav__links">
-        <NavLink to="/home" className="nav__link">
+        <NavLink to="/" className="nav__link">
           Home
         </NavLink>
         <NavLink to="/search" className="nav__link">
           Cerca
         </NavLink>
       </div>
+
+      {/* Solo icona: senza aria-label il link sarebbe muto per i lettori di schermo */}
+      <NavLink
+        to="/profilo"
+        className="nav__utente"
+        aria-label="Profilo utente"
+      >
+        <i className="bi bi-person-circle" aria-hidden="true"></i>
+      </NavLink>
     </nav>
   );
 }

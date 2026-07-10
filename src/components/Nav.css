@@ -2,7 +2,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 32px;
   flex-wrap: wrap;
   padding: 16px 32px;
@@ -33,6 +33,23 @@
 
 .nav__link:hover {
   background: var(--colore-card);
+}
+
+/* margin-left: auto assorbe lo spazio libero e spinge l'icona all'estremità destra */
+.nav__utente {
+  margin-left: auto;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--colore-accento);
+}
+
+/* L'icona è sola: il margine destro della regola globale .bi qui non serve */
+.nav__utente .bi {
+  margin-right: 0;
+}
+
+.nav__utente.active {
+  color: var(--colore-accento-hover);
 }
 
 /* Classe applicata automaticamente da NavLink alla route attiva */
