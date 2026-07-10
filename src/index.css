@@ -22,3 +22,9 @@ body {
   font-family: system-ui, sans-serif;
   color: var(--colore-testo);
 }
+
+/* Spazio tra un'icona Bootstrap e il testo che la segue.
+   In em, così resta proporzionato sia nei titoli grandi sia nei testi piccoli. */
+.bi {
+  margin-right: 0.4em;
+}

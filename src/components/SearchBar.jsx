@@ -27,6 +27,8 @@ function SearchBar() {
         placeholder="Cerca una città..."
       />
       <button type="submit" className="searchbar__button">
+        {/* aria-hidden: l'icona è decorativa, il testo accanto basta ai lettori di schermo */}
+        <i className="bi bi-search" aria-hidden="true"></i>
         Cerca
       </button>
     </form>

@@ -4,8 +4,11 @@
   padding: 24px;
 }
 
+/* Titolo grande: è il primo elemento della pagina, deve pesare */
 .home__titolo {
-  margin-top: 0;
+  margin: 0 0 32px;
+  text-align: center;
+  font-size: 3.5rem;
 }
 
 .home__error {

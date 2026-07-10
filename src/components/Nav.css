@@ -1,29 +1,38 @@
+/* space-between: il brand resta a sinistra, i link vanno a destra */
 .nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 32px;
   flex-wrap: wrap;
-  padding: 12px 24px;
+  padding: 16px 32px;
   border-bottom: 1px solid var(--colore-bordo);
   background: var(--colore-nav);
 }
 
 .nav__brand {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: var(--colore-accento);
   text-decoration: none;
 }
 
 .nav__links {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   display: flex;
-  gap: 16px;
+  gap: 32px;
 }
 
+/* Il padding allarga l'area cliccabile oltre le sole lettere */
 .nav__link {
+  padding: 8px 20px;
+  border-radius: 8px;
   color: var(--colore-testo);
   text-decoration: none;
+}
+
+.nav__link:hover {
+  background: var(--colore-card);
 }
 
 /* Classe applicata automaticamente da NavLink alla route attiva */

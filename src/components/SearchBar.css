@@ -1,26 +1,26 @@
 .searchbar {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 
 .searchbar__input {
   flex: 1;
   min-width: 0;
-  padding: 8px 12px;
+  padding: 16px 20px;
   border: 1px solid var(--colore-bordo);
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
   background: var(--colore-card);
   color: inherit;
 }
 
 .searchbar__button {
-  padding: 8px 16px;
+  padding: 16px 32px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--colore-accento);
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 

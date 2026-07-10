@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getMeteoPerCitta } from "../api/meteo";
 import "./Details.css";
 
 // Dettaglio di una singola città. Il nome arriva dall'URL: /details/Roma
 function Details() {
   const { nome } = useParams();
+  const { state } = useLocation();
+
+  // La card ci dice da dove arriva il click. Se manca (link aperto direttamente
+  // o pagina ricaricata) il fallback è la home.
+  const indietro = state?.da || "/";
+  let etichetta = "Torna alla home";
+  if (indietro.startsWith("/search")) etichetta = "Torna alla ricerca";
 
   const [dati, setDati] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,8 +38,9 @@ function Details() {
 
   return (
     <div className="details">
-      <Link to="/search" className="details__indietro">
-        ← Torna alla ricerca
+      <Link to={indietro} className="details__indietro">
+        <i className="bi bi-arrow-left" aria-hidden="true"></i>
+        {etichetta}
       </Link>
 
       {loading && <p>Caricamento dati meteo...</p>}
@@ -49,13 +57,22 @@ function Details() {
           <p className="details__temp">{dati.meteo.temperature}°C</p>
 
           <dl className="details__lista">
-            <dt>Velocità del vento</dt>
+            <dt>
+              <i className="bi bi-wind" aria-hidden="true"></i>
+              Velocità del vento
+            </dt>
             <dd>{dati.meteo.windspeed} km/h</dd>
 
-            <dt>Direzione vento</dt>
+            <dt>
+              <i className="bi bi-compass" aria-hidden="true"></i>
+              Direzione vento
+            </dt>
             <dd>{dati.meteo.winddirection}°</dd>
 
-            <dt>Coordinate</dt>
+            <dt>
+              <i className="bi bi-geo-alt" aria-hidden="true"></i>
+              Coordinate
+            </dt>
             <dd>
               {dati.luogo.latitude}, {dati.luogo.longitude}
             </dd>
