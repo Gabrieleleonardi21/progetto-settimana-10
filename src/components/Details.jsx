@@ -31,8 +31,8 @@ function Details() {
 
   return (
     <div className="details">
-      <Link to="/" className="details__indietro">
-        ← Torna alla home
+      <Link to="/search" className="details__indietro">
+        ← Torna alla ricerca
       </Link>
 
       {loading && <p>Caricamento dati meteo...</p>}

@@ -31,17 +31,3 @@
   color: var(--colore-accento);
   font-weight: bold;
 }
-
-/* La searchbar occupa lo spazio rimasto, spinta a destra */
-.nav__search {
-  flex: 1;
-  min-width: 200px;
-  max-width: 360px;
-  margin-left: auto;
-  transition: max-width 0.25s ease;
-}
-
-/* Sulla route /search il tetto dei 360px sale: la barra riempie lo spazio libero */
-.nav__search--wide {
-  max-width: 800px;
-}

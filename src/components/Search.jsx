@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { cercaCitta, getMeteoAttuale } from "../api/meteo";
 import MeteoCard from "./MeteoCard";
+import SearchBar from "./SearchBar";
 import "./Search.css";
 
 // Pagina dei risultati. La query arriva dall'URL (/search?q=roma), non da uno state:
@@ -44,7 +45,11 @@ function Search() {
 
   return (
     <div className="search">
-      {!query && <p>Scrivi il nome di una città nella barra in alto.</p>}
+      <div className="search__barra">
+        <SearchBar />
+      </div>
+
+      {!query && <p>Scrivi il nome di una città e premi Cerca.</p>}
       {query && <h1 className="search__titolo">Risultati per "{query}"</h1>}
 
       {loading && <p>Caricamento dati meteo...</p>}

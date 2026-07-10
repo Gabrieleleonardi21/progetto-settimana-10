@@ -4,6 +4,7 @@ import "./SearchBar.css";
 
 // Barra di ricerca riutilizzabile: non cerca da sola, porta l'utente su /search?q=...
 // La pagina Search legge il parametro e fa la chiamata. Così la ricerca è condivisibile via URL.
+// Vive dentro la pagina Search: uscendo dalla route si smonta e l'input si svuota da solo.
 function SearchBar() {
   const [citta, setCitta] = useState("");
   const navigate = useNavigate();

@@ -4,6 +4,11 @@
   padding: 24px;
 }
 
+/* La barra di ricerca è il contenuto principale della pagina: larghezza piena */
+.search__barra {
+  margin-bottom: 24px;
+}
+
 .search__titolo {
   margin-top: 0;
 }
