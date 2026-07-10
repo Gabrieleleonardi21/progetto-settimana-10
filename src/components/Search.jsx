@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { cercaCitta, getMeteoAttuale } from "../api/meteo";
 import { useAuth } from "../context/auth";
 import { useCitta } from "../context/citta";
 import MeteoCard from "./MeteoCard";
 import SearchBar from "./SearchBar";
+import Toast from "./Toast";
 import "./Search.css";
 
 // Pagina dei risultati. La query arriva dall'URL (/search?q=roma), non da uno state:
@@ -19,6 +20,13 @@ function Search() {
   const [risultati, setRisultati] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  // { id, testo } oppure null. L'id cambia a ogni click: serve come key per
+  // rimontare il Toast e far ripartire il timer anche se il testo è lo stesso.
+  const [toast, setToast] = useState(null);
+
+  // Riferimento stabile tra i render, altrimenti l'effect del Toast
+  // ricreerebbe il timer a ogni render di Search e la notifica resterebbe appesa.
+  const chiudiToast = useCallback(() => setToast(null), []);
 
   useEffect(() => {
     if (!query) return;
@@ -68,7 +76,10 @@ function Search() {
           const azione = utente && {
             icona: "bi-plus-lg",
             etichetta: `Aggiungi ${item.luogo.name} alla home`,
-            onClick: () => aggiungi(item.luogo.name),
+            onClick: () => {
+              aggiungi(item.luogo.name);
+              setToast({ id: Date.now(), testo: "Aggiunto ai preferiti" });
+            },
           };
 
           return (
@@ -81,6 +92,10 @@ function Search() {
           );
         })}
       </div>
+
+      {toast && (
+        <Toast key={toast.id} messaggio={toast.testo} onChiudi={chiudiToast} />
+      )}
     </div>
   );
 }
