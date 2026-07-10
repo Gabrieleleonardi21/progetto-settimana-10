@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { cercaCitta, getMeteoAttuale } from "../api/meteo";
+import { useAuth } from "../context/auth";
+import { useCitta } from "../context/citta";
 import MeteoCard from "./MeteoCard";
 import SearchBar from "./SearchBar";
 import "./Search.css";
@@ -10,6 +12,9 @@ import "./Search.css";
 function Search() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
+
+  const { utente } = useAuth();
+  const { aggiungi } = useCitta();
 
   const [risultati, setRisultati] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -58,13 +63,23 @@ function Search() {
       )}
 
       <div className="search__cards">
-        {risultati.map((item) => (
-          <MeteoCard
-            key={item.luogo.id}
-            luogo={item.luogo}
-            meteo={item.meteo}
-          />
-        ))}
+        {risultati.map((item) => {
+          // Senza login azione resta null e MeteoCard non disegna il bottone
+          const azione = utente && {
+            icona: "bi-plus-lg",
+            etichetta: `Aggiungi ${item.luogo.name} alla home`,
+            onClick: () => aggiungi(item.luogo.name),
+          };
+
+          return (
+            <MeteoCard
+              key={item.luogo.id}
+              luogo={item.luogo}
+              meteo={item.meteo}
+              azione={azione}
+            />
+          );
+        })}
       </div>
     </div>
   );

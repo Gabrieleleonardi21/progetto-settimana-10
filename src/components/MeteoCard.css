@@ -1,3 +1,8 @@
+/* Contenitore: serve solo come riferimento per posizionare il bottone azione */
+.card-box {
+  position: relative;
+}
+
 .card {
   display: block;
   padding: 20px;
@@ -8,12 +13,40 @@
   text-decoration: none;
 }
 
+/* Sovrapposto alla card, in alto a destra. Il padding-right della card gli fa spazio */
+.card__azione {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 8px;
+  background: var(--colore-nav);
+  color: var(--colore-accento);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.card__azione:hover {
+  background: var(--colore-accento);
+  color: #fff;
+}
+
+.card__azione .bi {
+  margin-right: 0;
+  color: inherit;
+}
+
 .card:hover {
   border-color: var(--colore-accento);
 }
 
+/* padding a destra: il titolo lungo non finisce sotto il bottone azione */
 .card__titolo {
   margin: 0 0 8px;
+  padding-right: 44px;
   font-size: 1rem;
   color: var(--colore-testo-soft);
   font-weight: normal;

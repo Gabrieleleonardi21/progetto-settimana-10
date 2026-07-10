@@ -27,3 +27,29 @@
   margin: 0;
   color: var(--colore-testo-soft);
 }
+
+.profilo__link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--colore-accento);
+  text-decoration: none;
+}
+
+.profilo__logout {
+  margin-top: 24px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: var(--colore-accento);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.profilo__logout:hover {
+  background: var(--colore-accento-hover);
+}
+
+.profilo__logout .bi {
+  color: inherit;
+}

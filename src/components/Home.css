@@ -15,6 +15,42 @@
   color: var(--colore-errore);
 }
 
+/* Form di aggiunta città: visibile solo dopo il login */
+.home__aggiungi {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.home__input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--colore-card);
+  color: inherit;
+}
+
+.home__button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: var(--colore-accento);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.home__button:hover {
+  background: var(--colore-accento-hover);
+}
+
+.home__button .bi {
+  color: inherit;
+}
+
 /* Le due card affiancate, in colonna su schermi stretti */
 .home__cards {
   display: grid;
